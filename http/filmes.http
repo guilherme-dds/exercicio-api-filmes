@@ -1,0 +1,27 @@
+@url = http://localhost:3000/filmes
+GET {{url}}
+
+###
+GET {{url}}/2
+
+###
+POST {{url}}
+Content-Type: application/json
+
+{
+    "titulo" : "Vingadores: Doutor Destino",
+    "diretor" : "Irmãos Russo",
+    "ano" : 2026
+}
+
+###
+PUT {{url}}/3
+Content-Type: application/json
+
+{
+    "titulo": "Avengers: Doomsday",
+    "assistido": true
+}
+
+###
+DELETE {{url}}/3
