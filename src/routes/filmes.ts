@@ -60,10 +60,11 @@ router.put("/:id", (req: Request, res: Response) => {
 
 router.delete("/:id", (req: Request, res: Response) => {
     const id = Number(req.params.id)
+    const filmeRemovido = filmes.find(t => t.id == id)
 
-    filmes = filmes.filter(t => t.id !== id)
+    filmes = filmes.filter(t => t.id !== id)  
 
-    res.json({mensagem: `Filme com id ${id} removido`})
+    res.json({mensagem: `Filme ${filmeRemovido?.titulo} com id ${id} removido`})
 })
 
 export default router;
